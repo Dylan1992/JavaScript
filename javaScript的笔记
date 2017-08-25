@@ -15,3 +15,4 @@ javascript中对于函数主要有函数声明和函数表达试两种用法：
         var sum = function(num1,num2){
                 return num1 + num2
         }
+        在使用过程中，函数声明会优先被解释器解释 也就是说函数声明的函数在之前代码行被调用不会报错
