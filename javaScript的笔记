@@ -45,3 +45,19 @@ js中存在一种继承方式（在高版本ie中） 使用.__proto__ 来使一�
   var xiaohong = createNew("xiaohong");
   xiaohong.run(); // xiaohong is running
   xiaohong.__proto__ = Student; //true
+
+
+
+js中对于创建方法时 有的有return 有的没有是因为对于方法实例化为对象是是否加new
+例：
+function Student(name){
+  this.name = name;
+  this.age - age;
+  this.hello = function(){
+    alert(this.name + "say hello!")
+  }
+}
+Student xiaoming = new Student("xiaoming");
+xiaoming.name; // xiaoming
+xiaoming.hello(); // xiaoming say hello!
+对于创建对象时写了new 则该函数是构造函数 ，它绑定对象指向新创建的对象，并默认返回this，也就是说不用在最后增加return this；
