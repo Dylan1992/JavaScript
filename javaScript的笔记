@@ -61,3 +61,4 @@ Student xiaoming = new Student("xiaoming");
 xiaoming.name; // xiaoming
 xiaoming.hello(); // xiaoming say hello!
 对于创建对象时写了new 则该函数是构造函数 ，它绑定对象指向新创建的对象，并默认返回this，也就是说不用在最后增加return this；
+*对于js中约定 构造函数首字母大写，而普通函数首字母小写。
