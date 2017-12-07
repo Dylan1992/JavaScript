@@ -16,3 +16,32 @@ javascript中对于函数主要有函数声明和函数表达试两种用法：
                 return num1 + num2
         }
         在使用过程中，函数声明会优先被解释器解释 也就是说函数声明的函数在之前代码行被调用不会报错
+
+
+js中不区分类和实例，所有对象都是实例
+js中存在一种继承方式（在高版本ie中） 使用.__proto__ 来使一个对象继承另一个对象。
+  var Student = {
+    name:"xiaoming",
+    age:"18",
+    run:function(){
+      console.log(this.name + " is running");
+    }
+  }
+  var xiaohong = {
+    name:"xiaohong"
+  }
+  
+  xiaohong.__proto__ = student;
+  Student.name; //xiaoming
+  xiaohong.name; //xiaohong
+  xiaohong.run(); //xiaohong is running
+ 
+ 实际使用中通常不建议使用.__protp__ 而是利用Obkect.create()方法传入一个原型对象，然后基于该原型对象创建新对象：
+  function createNew(name){
+    var newO = Object.create(Student);
+    newO.name = name;
+    return newO;
+  }
+  var xiaohong = createNew("xiaohong");
+  xiaohong.run(); // xiaohong is running
+  xiaohong.__proto__ = Student; //true
